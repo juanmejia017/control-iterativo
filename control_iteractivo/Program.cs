@@ -119,6 +119,7 @@ class Program
 
             } while (opcion != 3);
 
+            Console.WriteLine("Sección 3 — Break y Continue: Filtrado y búsqueda eficiente");
             Console.WriteLine("===PRIMERA CALIFICACION REPROBATORIA===");
             bool reprobado = false;
             for(int i = 0; i < calificaciones.Length; i++){
@@ -144,12 +145,23 @@ class Program
                 aprobados++;
             }
             
-
+            }
+            Console.WriteLine("===FILTRO COMBINADO===");
+           Array.Reverse(calificaciones); 
+           for (int i = 0; i < calificaciones.Length; i++)
+        {
+            if (calificaciones[i] >= 95)
+            {
+                break;
+            } else if (calificaciones[i] < 70)
+            {
+                continue;
+            } else
+            {
+                Console.WriteLine("Calificación Procesada: " + calificaciones[i]);
+            }
         }
-            
-        
-            
-        }
+         }
            
             
    
