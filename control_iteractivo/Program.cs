@@ -131,15 +131,25 @@ class Program
                 }
             }
             int aprobados = 0;
-            foreach (int calificacion in calificaciones)
+            foreach(int calificacion in calificaciones)
+        {
+            if (calificacion < 60)
             {
-                if (calificacion >= 60)
-                {
-                    aprobados++;
-                }
+                continue;
+            }else
+            {
+                Console.WriteLine("aprobados " + calificacion);
+                aprobados++;
             }
-            Console.WriteLine("Número de estudiantes aprobados: " + aprobados);
+            
+
+        }
+
+        
+            
+        }
+           
             
    
     }
-}
+
