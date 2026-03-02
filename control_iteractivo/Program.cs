@@ -127,12 +127,11 @@ class Program
                 {
                 Console.WriteLine("primera calificacion reprobatoria: " + calificaciones[i]);
                 Console.WriteLine("posicion:" + i );
-                reprobado = true;
-                break;   
+                 break;   
                     
                 }
             }
-            Console.WriteLine("===ESTUIDANTES APROBADOS===");
+            Console.WriteLine("===ESTUDIANTES APROBADOS===");
             int aprobados = 0;
             foreach(int calificacion in calificaciones)
         {
