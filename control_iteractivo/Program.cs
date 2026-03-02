@@ -72,6 +72,7 @@ class Program
         else
         {
             Console.WriteLine("Acceso denegado");
+            return;
         }
 
         Console.WriteLine("===MENU PRINCIPAL===");
@@ -127,9 +128,6 @@ class Program
                 reprobado = true;
                 break;   
                     
-                }if(reprobado == false)
-                {
-                    Console.WriteLine("No hay calificaciones reprobatorias");
                 }
             }
             
