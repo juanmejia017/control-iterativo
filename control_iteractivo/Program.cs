@@ -119,6 +119,7 @@ class Program
 
             } while (opcion != 3);
 
+            Console.WriteLine("===PRIMERA CALIFICACION REPROBATORIA===");
             bool reprobado = false;
             for(int i = 0; i < calificaciones.Length; i++){
                 if(calificaciones[i] < 60)
@@ -130,6 +131,7 @@ class Program
                     
                 }
             }
+            Console.WriteLine("===ESTUIDANTES APROBADOS===");
             int aprobados = 0;
             foreach(int calificacion in calificaciones)
         {
@@ -144,7 +146,7 @@ class Program
             
 
         }
-
+            
         
             
         }
