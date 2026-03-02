@@ -25,15 +25,20 @@ class Program
         }
 
         Console.WriteLine("=== PROMEDIO DEL GRUPO ===");
+       
         double promedio = 0;
+        double suma = 0;
 
         foreach (int calificacion in calificaciones)
         {
-            promedio += calificacion;
+            suma += calificacion;     
         }
 
-        promedio /= calificaciones.Length;
+        promedio = suma / calificaciones.Length;
+
+        Console.WriteLine("Suma: " + suma);
         Console.WriteLine("Promedio: " + promedio);
+       
 
         Console.WriteLine("===POSICIONES PARES===");
         for (int i = 1; i < calificaciones.Length; i += 2)
@@ -74,37 +79,61 @@ class Program
 
         do
         {
-            Console.WriteLine("1. Ver Promedio del Grupo");
-            Console.WriteLine("2. Ver Calificación Más Alta");
-            Console.WriteLine("3. Salir");
-            Console.WriteLine("Elige una opción:");
+    Console.WriteLine("1. Ver Promedio del Grupo");
+    Console.WriteLine("2. Ver Calificación Más Alta");
+    Console.WriteLine("3. Salir");
+    Console.WriteLine("Elige una opción:");
 
-            bool esNumero = int.TryParse(Console.ReadLine(), out opcion);
+    bool esNumero = int.TryParse(Console.ReadLine(), out opcion);
 
-            if (!esNumero)
-            {
-                opcion = 0;
+    if (!esNumero)
+    {
+        opcion = 0;
+    }
+
+    switch (opcion)
+    {
+        case 1:
+            Console.WriteLine("El Promedio del Grupo es: " + promedio);
+            Console.WriteLine("Presiona una tecla para continuar...");
+            Console.ReadKey();
+            break;
+
+        case 2:
+            Console.WriteLine("La Calificación Más Alta es: " + calificaciones[0]);
+            Console.WriteLine("Presiona una tecla para continuar...");
+            Console.ReadKey();
+            break;
+
+        case 3:
+            Console.WriteLine("Saliendo del programa...");
+            break;
+
+        default:
+            Console.WriteLine("Opción no válida. Intente nuevamente.");
+            Console.WriteLine("Presiona una tecla para continuar...");
+            Console.ReadKey();
+            break;
+    }
+
+            } while (opcion != 3);
+
+            bool reprobado = false;
+            for(int i = 0; i < calificaciones.Length; i++){
+                if(calificaciones[i] < 60)
+                {
+                Console.WriteLine("primera calificacion reprobatoria: " + calificaciones[i]);
+                Console.WriteLine("posicion:" + i );
+                reprobado = true;
+                break;   
+                    
+                }if(reprobado == false)
+                {
+                    Console.WriteLine("No hay calificaciones reprobatorias");
+                }
             }
+            
 
-            switch (opcion)
-            {
-                case 1:
-                    Console.WriteLine("El Promedio del Grupo es: " + promedio);
-                    break;
-
-                case 2:
-                    Console.WriteLine("La Calificación Más Alta es: " + calificaciones[0]);
-                    break;
-
-                case 3:
-                    Console.WriteLine("Saliendo del programa...");
-                    break;
-
-                default:
-                    Console.WriteLine("Opción no válida. Intente nuevamente.");
-                    break;
-            }
-
-        } while (opcion != 3);
+   
     }
 }
